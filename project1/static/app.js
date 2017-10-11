@@ -13,7 +13,17 @@
 *
 *
 */
-app = angular.module('mainApp', []);
+app = angular.module('mainApp', ['ngRoute']);
+
+app.config(function($routeProvider) {
+	$routeProvider
+		.when('/', {
+			templateUrl: './home.html'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+});
 
 app.controller('MainCtrl',[function(){
   var self=this;
